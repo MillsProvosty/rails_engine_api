@@ -222,7 +222,7 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/merchants.rb": [
         1,
         1,
-        1,
+        6,
         null,
         null
       ],
@@ -238,6 +238,13 @@
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/config/routes.rb": [
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -256,6 +263,14 @@
         null,
         1,
         1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/models/invoice_item.rb": [
@@ -271,6 +286,15 @@
         null,
         1,
         1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/models/invoice.rb": [
@@ -286,6 +310,16 @@
         null,
         1,
         1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/models/item.rb": [
@@ -301,6 +335,8 @@
         null,
         1,
         1,
+        2,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/models/merchant.rb": [
@@ -313,14 +349,34 @@
         null,
         1,
         1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/models/transaction.rb": [
         1,
         1,
         null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/requests/merchant_requests_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null
       ]
     },
-    "timestamp": 1561498642
+    "timestamp": 1561500499
   }
 }
