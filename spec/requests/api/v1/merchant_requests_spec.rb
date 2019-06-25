@@ -10,7 +10,7 @@ describe "Merchants API" do
 
     merchants = JSON.parse(response.body)
 
-    expect(merchants.count).to eq(5)
+    expect(merchants["data"].count).to eq(5)
   end
 
   it "returns a single merchant" do
@@ -21,7 +21,7 @@ describe "Merchants API" do
     expect(response).to be_successful
     merchant = JSON.parse(response.body)
 
-    expect(merchant["id"]).to eq(id)
+    expect(merchant["data"]["id"].to_i).to eq(id)
   end
 
   it "returns a collection of items associated with that merchant" do
@@ -32,16 +32,18 @@ describe "Merchants API" do
 
     expect(response).to be_successful
     items = JSON.parse(response.body)
+
+    expect(items["data"].count).to eq(3)
   end
 
-  it " returns a collection of invoices associated with that merchant from their known orders" do
+  xit " returns a collection of invoices associated with that merchant from their known orders" do
     merch = create(:merchant)
     create_list(:invoice, 4, merchant_id: merch["id"])
 
     get "/api/v1/merchants/#{merch["id"]}/invoices"
 
     expect(response).to be_successful
-    invoices = JSON
+    invoices = JSON.parse(response.body)
 
   end
 end

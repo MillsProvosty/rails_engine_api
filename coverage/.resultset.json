@@ -410,6 +410,19 @@
         1,
         1,
         null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/merchants_controller.rb": [
@@ -427,14 +440,26 @@
         1,
         null
       ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/merchant_serializer.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/items_controller.rb": [
         1,
         1,
         1,
         null,
         null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/item_serializer.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1561503753
+    "timestamp": 1561504780
   }
 }
