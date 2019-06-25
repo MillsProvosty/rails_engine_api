@@ -12,6 +12,13 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+I used the   CSV.foreach('path', headers: true, header_converters: :symbol)   
+  do |row|
+    Class.create(row.to_hash)
+  end
+  There was a major change I needed to make in the migrations: credit card numbers needed to be changed from integers to strings.
+
+  The command used to populate the database is rake import:data
 
 * Database initialization
 
