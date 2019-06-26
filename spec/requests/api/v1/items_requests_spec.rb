@@ -31,7 +31,8 @@ describe "Items API" do
   it "returns a collection of associated invoice items" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
-    invoice = create(:invoice, merchant: merch)
+    cust = create(:customer)
+    invoice = create(:invoice, merchant: merch, customer: cust)
     inv_item = create_list(:invoice_item, 5, item: item, invoice: invoice)
 
     get "/api/v1/items/#{item["id"]}/invoice_items"

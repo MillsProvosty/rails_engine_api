@@ -4,7 +4,8 @@ describe "Invoice Items Requests" do
   it "shows all invoice items" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
-    invoice = create(:invoice, merchant: merch)
+    cust = create(:customer)
+    invoice = create(:invoice, merchant: merch, customer: cust)
     inv_item = create_list(:invoice_item, 5, item: item, invoice: invoice)
 
     get "/api/v1/invoice_items"
@@ -19,7 +20,8 @@ describe "Invoice Items Requests" do
   it "shows an individual invoice item" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
-    invoice = create(:invoice, merchant: merch)
+    cust = create(:customer)
+    invoice = create(:invoice, merchant: merch, customer: cust)
     inv_item = create(:invoice_item, item: item, invoice: invoice)
     id = inv_item.id
 
@@ -36,7 +38,8 @@ describe "Invoice Items Requests" do
   it "returns the associated invoice" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
-    invoice = create(:invoice, merchant: merch)
+    cust = create(:customer)
+    invoice = create(:invoice, merchant: merch, customer: cust)
     inv_item = create(:invoice_item, item: item, invoice: invoice)
     id = inv_item.id
 
@@ -52,7 +55,8 @@ describe "Invoice Items Requests" do
   it " returns the associated item" do
     merch = create(:merchant)
     item = create(:item, merchant: merch)
-    invoice = create(:invoice, merchant: merch)
+    cust = create(:customer)
+    invoice = create(:invoice, merchant: merch, customer: cust)
     inv_item = create(:invoice_item, item: item, invoice: invoice)
     id = inv_item.id
 

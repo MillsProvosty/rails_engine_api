@@ -38,7 +38,8 @@ describe "Merchants API" do
 
   it " returns a collection of invoices associated with that merchant from their known orders" do
     merch = create(:merchant)
-    create_list(:invoice, 4, merchant_id: merch["id"])
+    cust = create(:customer)
+    create_list(:invoice, 4, merchant_id: merch["id"], customer: cust)
 
     get "/api/v1/merchants/#{merch["id"]}/invoices"
 
