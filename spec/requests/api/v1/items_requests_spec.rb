@@ -28,5 +28,20 @@ describe "Items API" do
     expect(item["data"]["id"].to_i).to eq(id)
   end
 
+  it "returns a collection of associated invoice items" do
+    merch = create(:merchant)
+    item = create(:item, merchant: merch)
+    invoice = create(:invoice, merchant: merch)
+    inv_item = create_list(:invoice_item, 5, item: item, invoice: invoice)
+
+    get "/api/v1/items/#{item["id"]}/invoice_items"
+
+    expect(response).to be_successful
+
+    invoice_items = JSON.parse(response.body)
+
+    expect(invoice_items["data"].count).to eq(5)
+  end
+
 
 end
