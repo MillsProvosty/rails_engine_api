@@ -212,9 +212,9 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/items.rb": [
         1,
         1,
-        14,
-        14,
-        14,
+        2,
+        2,
+        2,
         1,
         null,
         null
@@ -222,7 +222,7 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/merchants.rb": [
         1,
         1,
-        5,
+        2,
         null,
         null
       ],
@@ -252,6 +252,9 @@
         1,
         null,
         null,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -274,27 +277,6 @@
         1,
         1,
         null,
-        1,
-        null
-      ],
-      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/items_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/application_controller.rb": [
-        1,
-        null
-      ],
-      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/item_serializer.rb": [
-        1,
-        1,
         1,
         null
       ],
@@ -322,30 +304,17 @@
         null,
         null
       ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/invoice_item_serializer.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/merchants_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/merchant_serializer.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1561512887
+    "timestamp": 1561559496
   }
 }
