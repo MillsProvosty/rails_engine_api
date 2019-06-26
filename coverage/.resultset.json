@@ -212,9 +212,9 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/items.rb": [
         1,
         1,
-        13,
-        13,
-        13,
+        14,
+        14,
+        14,
         1,
         null,
         null
@@ -222,7 +222,7 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/merchants.rb": [
         1,
         1,
-        4,
+        5,
         null,
         null
       ],
@@ -247,6 +247,7 @@
         1,
         null,
         null,
+        1,
         1,
         1,
         null,
@@ -326,8 +327,25 @@
         1,
         1,
         null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/merchants_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/merchant_serializer.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1561512019
+    "timestamp": 1561512887
   }
 }

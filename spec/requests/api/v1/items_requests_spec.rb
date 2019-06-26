@@ -44,16 +44,17 @@ describe "Items API" do
   end
 
   it "returns the associated merchant" do
-    id = create(:merchant).id
+    merch = create(:merchant)
+    id = merch.id
     item = create(:item, merchant: merch)
 
-    get "/api/v1/items/#{item["id"]}/merchant"
+    get "/api/v1/items/#{item["id"]}/merchants"
 
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body)
 
-    expect(merchant["data"]["id"]).to eq(id)
+    expect(merchant["data"].first["id"].to_i).to eq(id)
   end
 
 
