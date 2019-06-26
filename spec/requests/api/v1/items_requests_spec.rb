@@ -15,5 +15,17 @@ describe "Items API" do
     expect(items["data"].count).to eq(10)
   end
 
-  
+  it "returns specific item" do
+    merch = create(:merchant)
+    id = create(:item).id
+
+    get "api/v1/items/#{id}"
+
+    expect(response).to be_successful
+    item = JSON.parse(response.body)
+
+    expect(item["data"]["id"]).to eq(id)
+  end
+
+
 end
