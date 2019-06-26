@@ -33,4 +33,35 @@ describe "Invoice Items Requests" do
 
   end
 
+  it "returns the associated invoice" do
+    merch = create(:merchant)
+    item = create(:item, merchant: merch)
+    invoice = create(:invoice, merchant: merch)
+    inv_item = create(:invoice_item, item: item, invoice: invoice)
+    id = inv_item.id
+
+    get "/api/v1/invoice_items/#{id}/invoices"
+
+    expect(response).to be_successful
+
+    invoice_items = JSON.parse(response.body)
+
+    expect(invoice_items["data"].first["id"].to_i).to eq(invoice["id"])
+  end
+
+  it " returns the associated item" do
+    merch = create(:merchant)
+    item = create(:item, merchant: merch)
+    invoice = create(:invoice, merchant: merch)
+    inv_item = create(:invoice_item, item: item, invoice: invoice)
+    id = inv_item.id
+
+    get "/api/v1/invoice_items/#{id}/items"
+
+    expect(response).to be_successful
+
+    invoice_items = JSON.parse(response.body)
+
+    expect(invoice_items["data"].first["id"].to_i).to eq(item["id"])
+  end
 end

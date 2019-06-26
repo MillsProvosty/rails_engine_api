@@ -14,7 +14,9 @@ Rails.application.routes.draw do
       end
 
       resources :invoice_items, only: [:index, :show] do
-      end 
+        resources :items, only: [:index, :show]
+        resources :invoices, only: [:index, :show]
+      end
     end
   end
 end
