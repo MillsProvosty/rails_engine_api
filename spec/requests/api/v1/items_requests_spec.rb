@@ -17,14 +17,15 @@ describe "Items API" do
 
   it "returns specific item" do
     merch = create(:merchant)
-    id = create(:item).id
+    id = create(:item, merchant: merch).id
 
-    get "api/v1/items/#{id}"
+
+    get "/api/v1/items/#{id}"
 
     expect(response).to be_successful
     item = JSON.parse(response.body)
 
-    expect(item["data"]["id"]).to eq(id)
+    expect(item["data"]["id"].to_i).to eq(id)
   end
 
 
