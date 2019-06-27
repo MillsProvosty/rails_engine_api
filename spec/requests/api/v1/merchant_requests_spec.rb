@@ -119,8 +119,9 @@ describe "Merchants API" do
     expect(response).to be_successful
 
     merchants = JSON.parse(response.body)
-binding.pry
-    expect(merchants["data"]).to eq([merch1, merch2, merch3])
 
+    expect(merchants["data"].first["attributes"]["id"]).to eq(merch4.id)
+    expect(merchants["data"].last["attributes"]["id"]).to eq(merch2.id)
+    expect(merchants["data"].count).to eq(3)
   end
 end
