@@ -3,6 +3,6 @@ FactoryBot.define do
     invoice_id { 1 }
     credit_card_number { "MyString" }
     credit_card_expiration_date { 1 }
-    result { "MyString" }
+    result { "success" }
   end
 end

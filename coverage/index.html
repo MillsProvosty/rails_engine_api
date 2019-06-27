@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-06-27T10:18:56-06:00">2019-06-27T10:18:56-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-06-27T11:48:21-06:00">2019-06-27T11:48:21-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.77%</span></span>
+    (<span class="covered_percent"><span class="green">99.78%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.68
+         1.74
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>46</b> files in total.
-    <b>440</b> relevant lines. 
-    <span class="green"><b>439</b> lines covered</span> and
+    <b>447</b> relevant lines. 
+    <span class="green"><b>446</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -183,11 +183,11 @@
       <tr>
         <td class="strong"><a href="#f4c91b611f7859618ff2f12288ce6c28720c375e" class="src_link" title="app/models/merchant.rb">app/models/merchant.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>6</td>
-        <td>6</td>
+        <td>22</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
-        <td>1.2</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -417,7 +417,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>6.0</td>
       </tr>
       
       <tr>
@@ -453,9 +453,9 @@
       <tr>
         <td class="strong"><a href="#3039923009fc7f2e0eff954be19d71929106ba1a" class="src_link" title="spec/models/merchant_spec.rb">spec/models/merchant_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>54</td>
-        <td>38</td>
-        <td>38</td>
+        <td>60</td>
+        <td>43</td>
+        <td>43</td>
         <td>0</td>
         <td>1.7</td>
       </tr>
@@ -1390,8 +1390,8 @@
     <h3>app/models/merchant.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1472,6 +1472,60 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.total_items_sold(quantity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    Merchant.joins(items: [invoice_items: [invoice: [:transactions]]])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    .where(&quot;transactions.result = ?&quot;, &quot;success&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    .select(&quot;merchants.*, SUM(invoice_items.quantity) AS items_sold&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    .group(&quot;merchants.id&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    .order(&quot;items_sold DESC&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    .limit(quantity)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>
@@ -3528,22 +3582,22 @@
           <code class="ruby">    invoice_id { 1 }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="11" data-linenumber="4">
+          <span class="hits">11</span>
           
           <code class="ruby">    credit_card_number { &quot;MyString&quot; }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="11" data-linenumber="5">
+          <span class="hits">11</span>
           
           <code class="ruby">    credit_card_expiration_date { 1 }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="11" data-linenumber="6">
+          <span class="hits">11</span>
           
-          <code class="ruby">    result { &quot;MyString&quot; }</code>
+          <code class="ruby">    result { &quot;success&quot; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -3901,8 +3955,8 @@
     <h3>spec/models/merchant_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>38</b> relevant lines. 
-      <span class="green"><b>38</b> lines covered</span> and
+      <b>43</b> relevant lines. 
+      <span class="green"><b>43</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4153,82 +4207,118 @@
         <li class="covered" data-hits="2" data-linenumber="41">
           <span class="hits">2</span>
           
-          <code class="ruby">      @inv_item5 = create(:invoice_item, item: @item4, quantity: 5, invoice: @invoice4)</code>
+          <code class="ruby">      @inv_item5 = create(:invoice_item, item: @item4, quantity: 5, invoice: @invoice5)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="43">
+          <span class="hits">2</span>
           
-          <code class="ruby">    it &quot;.total_revenue(quanity)&quot; do</code>
+          <code class="ruby">      @tran1 = create(:transaction, invoice: @invoice1)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="44">
+          <span class="hits">2</span>
           
-          <code class="ruby">      quantity = 3</code>
+          <code class="ruby">      @tran2 = create(:transaction, invoice: @invoice2)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="45">
+          <span class="hits">2</span>
           
-          <code class="ruby">      expect(Merchant.total_revenue(quantity)).to eq([@merch4, @merch3, @merch2])</code>
+          <code class="ruby">      @tran3 = create(:transaction, invoice: @invoice3)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="covered" data-hits="2" data-linenumber="46">
+          <span class="hits">2</span>
           
+          <code class="ruby">      @tran4 = create(:transaction, invoice: @invoice4)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="47">
+          <span class="hits">2</span>
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      @tran5 = create(:transaction, invoice: @invoice5)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="49">
           
-          <code class="ruby">    it &quot;.total_items_sold&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">      quantity = 3</code>
+          <code class="ruby">    it &quot;.total_revenue(quanity)&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(Merchant.total_items_sold(quantity)).to eq([@merch4, @merch3, @merch2])</code>
+          <code class="ruby">      quantity = 3</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(Merchant.total_revenue(quantity)).to eq([@merch4, @merch3, @merch2])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;.total_items_sold(quantity)&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      quantity = 3</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Merchant.total_items_sold(quantity)).to eq([@merch4, @merch3, @merch2])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">end</code>

@@ -38,7 +38,13 @@ RSpec.describe Merchant, type: :model do
       @inv_item2 = create(:invoice_item, item: @item2, quantity: 2, invoice: @invoice2)
       @inv_item3 = create(:invoice_item, item: @item3, quantity: 3, invoice: @invoice3)
       @inv_item4 = create(:invoice_item, item: @item4, quantity: 4, invoice: @invoice4)
-      @inv_item5 = create(:invoice_item, item: @item4, quantity: 5, invoice: @invoice4)
+      @inv_item5 = create(:invoice_item, item: @item4, quantity: 5, invoice: @invoice5)
+
+      @tran1 = create(:transaction, invoice: @invoice1)
+      @tran2 = create(:transaction, invoice: @invoice2)
+      @tran3 = create(:transaction, invoice: @invoice3)
+      @tran4 = create(:transaction, invoice: @invoice4)
+      @tran5 = create(:transaction, invoice: @invoice5)
     end
 
     it ".total_revenue(quanity)" do
@@ -46,7 +52,7 @@ RSpec.describe Merchant, type: :model do
       expect(Merchant.total_revenue(quantity)).to eq([@merch4, @merch3, @merch2])
     end
 
-    it ".total_items_sold" do
+    it ".total_items_sold(quantity)" do
       quantity = 3
       expect(Merchant.total_items_sold(quantity)).to eq([@merch4, @merch3, @merch2])
     end
