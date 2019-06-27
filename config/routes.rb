@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       namespace :merchants do
         get '/find', to: 'search#show'
         get '/find_all', to: 'search#index'
+        get '/most_items', to: 'most_items#index'
         get '/most_revenue', to: 'most_revenue#index'
       end
 
@@ -48,6 +49,6 @@ Rails.application.routes.draw do
         resources :items, only: [:index, :show]
         resources :invoices, only: [:index, :show]
       end
-    end 
+    end
   end
 end
