@@ -16,26 +16,19 @@ describe "Items API" do
     expect(items["data"]["id"].to_i).to_not eq(item2["id"])
   end
 
-  xit "includes index action which renders a JSON representation of appropriate records" do
-    merch1 = create(:merchant)
-    merch2 = create(:merchant)
-    merch3 = create(:merchant)
-    name = merch3.name
-    merch4 = create(:merchant)
-    merch5 = create(:merchant)
-    merch6 = create(:merchant)
-    merch7 = create(:merchant)
-    merch8 = create(:merchant)
-    merch9 = create(:merchant)
-    merch10 = create(:merchant, name: "Joe")
+  it "includes index action which renders a JSON representation of appropriate records" do
+    merch = create(:merchant)
+    item1 = create(:item, merchant: merch)
+    name = item1.name
+    item2 = create(:item, merchant: merch)
 
-    get "/api/v1/merchants/find_all?name=#{name}"
+    get "/api/v1/items/find_all?name=#{name}"
 
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body)
 
-    expect(merchant["data"].count).to eq(9)
+    expect(merchant["data"].count).to eq(2)
   end
 
   it "returns all Items" do

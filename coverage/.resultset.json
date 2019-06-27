@@ -212,9 +212,9 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/items.rb": [
         1,
         1,
-        16,
-        16,
-        16,
+        18,
+        18,
+        18,
         1,
         null,
         null
@@ -222,7 +222,7 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/merchants.rb": [
         1,
         1,
-        6,
+        7,
         null,
         null
       ],
@@ -250,6 +250,27 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -291,7 +312,7 @@
         1,
         null
       ],
-      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/items_controller.rb": [
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/items/search_controller.rb": [
         1,
         1,
         1,
@@ -299,6 +320,8 @@
         null,
         1,
         1,
+        1,
+        null,
         null,
         null
       ],
@@ -310,6 +333,17 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/items_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/models/customer.rb": [
@@ -371,6 +405,6 @@
         null
       ]
     },
-    "timestamp": 1561595605
+    "timestamp": 1561596119
   }
 }
