@@ -37,7 +37,7 @@ RSpec.describe Merchant, type: :model do
       @inv_item3 = create(:invoice_item, item: @item3, quantity: 3, invoice: @invoice3)
       @inv_item4 = create(:invoice_item, item: @item4, quantity: 4, invoice: @invoice4)
     end
-    
+
     it ".total_revenue(quanity)" do
       quantity = 3
       expect(Merchant.total_revenue(quantity)).to eq([@merch4, @merch3, @merch2])
