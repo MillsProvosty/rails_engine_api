@@ -1,6 +1,43 @@
 require 'rails_helper'
 
 describe "Merchants API" do
+  it "includes show action which renders a JSON representation of appropriate records" do
+    merch1 = create(:merchant)
+    id = merch1.id
+    merch2 = create(:merchant)
+
+    get "/api/v1/merchants/find?id=#{id} "
+
+    expect(response).to be_successful
+
+    merchants = JSON.parse(response.body)
+
+    expect(merchants["data"]["id"].to_i).to eq(merch1["id"])
+    expect(merchants["data"]["id"].to_i).to_not eq(merch2["id"])
+  end
+
+  it "includes index action which renders a JSON representation of appropriate records" do
+    merch1 = create(:merchant)
+    merch2 = create(:merchant)
+    merch3 = create(:merchant)
+    name = merch3.name
+    merch4 = create(:merchant)
+    merch5 = create(:merchant)
+    merch6 = create(:merchant)
+    merch7 = create(:merchant)
+    merch8 = create(:merchant)
+    merch9 = create(:merchant)
+    merch10 = create(:merchant, name: "Joe")
+
+    get "/api/v1/merchants/find_all?name=#{name}"
+
+    expect(response).to be_successful
+
+    merchant = JSON.parse(response.body)
+
+    expect(merchant["data"].count).to eq(9)
+  end
+
   it "returns a all merchants" do
     create_list(:merchant, 5)
 
