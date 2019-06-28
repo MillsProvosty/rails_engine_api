@@ -169,5 +169,45 @@ describe "Merchants API" do
       expect(merchants["data"].last["attributes"]["id"]).to eq(merch2.id)
       expect(merchants["data"].count).to eq(3)
     end
+
+    it "loads_the_total_revenue_across_all_transactions_associated_with_one_merchant_by_date" do
+      merch1 = create(:merchant)
+      merch2 = create(:merchant)
+      merch3 = create(:merchant)
+      merch4 = create(:merchant)
+
+      item1 = create(:item, merchant: merch1, unit_price: 4)
+      item2 = create(:item, merchant: merch2, unit_price: 4)
+      item3 = create(:item, merchant: merch3, unit_price: 4)
+      item4 = create(:item, merchant: merch4, unit_price: 4)
+
+      cust1 = create(:customer)
+      cust2 = create(:customer)
+      cust3 = create(:customer)
+      cust4 = create(:customer)
+
+      invoice1 = create(:invoice, customer: cust1, merchant: merch1)
+      invoice2 = create(:invoice, customer: cust2, merchant: merch2)
+      invoice3 = create(:invoice, customer: cust3, merchant: merch3)
+      invoice4 = create(:invoice, customer: cust4, merchant: merch4)
+
+      inv_item1 = create(:invoice_item, item: item1, quantity: 1, invoice: invoice1)
+      inv_item2 = create(:invoice_item, item: item2, quantity: 2, invoice: invoice2)
+      inv_item3 = create(:invoice_item, item: item3, quantity: 3, invoice: invoice3)
+      inv_item4 = create(:invoice_item, item: item4, quantity: 4, invoice: invoice4)
+
+      tran1 = create(:transaction, invoice: invoice1)
+      tran2 = create(:transaction, invoice: invoice2)
+      tran3 = create(:transaction, invoice: invoice3)
+      tran4 = create(:transaction, invoice: invoice4)
+
+
+      quantity = 3
+      get "/api/v1/merchants/#{merch4.id}/revenue"
+      expect(response).to be_successful
+
+      total = JSON.parse(response.body)
+      expect(total["data"]["attributes"]["revenue"]).to eq("10")
+    end
   end
 end
