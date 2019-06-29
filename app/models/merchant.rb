@@ -25,4 +25,15 @@ class Merchant < ApplicationRecord
     .where("transactions.result = ?", "success")
     .sum("invoice_items.quantity * invoice_items.unit_price")
   end
+
+  # def total_revenue_date(date_arg)
+  #   start_time = date_arg.to_datetime
+  #   end_time = date_arg.to_datetime.end_of_day
+  #
+  #   Invoice.joins(:invoice_items, :transactions)
+  #   .where("transactions.result = ?", "success")
+  #   .where("transactions.created_at between ? and ?", start_time, end_time)
+  #   .select("SUM(invoice_items.quantity*invoice_items.unit_price) AS revenue")
+  #   .group("revenue")
+  # end
 end

@@ -57,7 +57,7 @@ RSpec.describe Merchant, type: :model do
         expect(Merchant.total_items_sold(quantity)).to eq([@merch4, @merch3, @merch2])
       end
     end
-  end
+
 
   describe "Instance Methods" do
     before :each do
@@ -99,4 +99,14 @@ RSpec.describe Merchant, type: :model do
     it "#total_revenue" do
       expect(@merch4.total_revenue).to eq(15)
     end
+
+    # it "#total_revenue_date(date)" do
+    #   date = "2012-03-27"
+    #   expect(@merch4.total_revenue_date(date)).to eq(4)
+    # end
+
+    it "#favorite_customer" do
+      expect(@merch3.favorite_customer).to eq(@cust3)
+    end 
+  end
 end
