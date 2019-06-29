@@ -36,4 +36,6 @@ class Merchant < ApplicationRecord
   #   .select("SUM(invoice_items.quantity*invoice_items.unit_price) AS revenue")
   #   .group("revenue")
   # end
+
+  
 end
