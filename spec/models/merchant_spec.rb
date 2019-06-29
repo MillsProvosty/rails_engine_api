@@ -136,7 +136,8 @@ RSpec.describe Merchant, type: :model do
       tran3 = create(:transaction, invoice: invoice3)
       tran4 = create(:transaction, invoice: invoice4)
       tran5 = create(:transaction, invoice: invoice5)
-      
-      expect(merch4.favorite_cusotmer).to eq(cust3)
+
+      expect(merch4.favorite_customer).to eq(cust3)
     end
+  end
 end
