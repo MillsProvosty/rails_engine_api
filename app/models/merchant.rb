@@ -22,7 +22,31 @@ class Merchant < ApplicationRecord
 
   def total_revenue
     Invoice.joins(:invoice_items, :transactions)
-    .where("transactions.result = ?", "success")
-    .sum("invoice_items.quantity * invoice_items.unit_price")
+      .where("transactions.result = ?", "success")
+      .sum("invoice_items.quantity * invoice_items.unit_price")
   end
+
+  def total_revenue_date(date_arg)
+    start_time = date_arg.to_datetime
+    end_time = date_arg.to_datetime.end_of_day
+
+    Invoice.joins(:invoice_items, :transactions)
+      .where("transactions.result = ?", "success")
+      .where("transactions.created_at between ? and ?", start_time, end_time)
+      .select("SUM(invoice_items.quantity*invoice_items.unit_price) AS revenue")
+      .group("revenue")
+  end
+
+  def favorite_customer
+    cust = Customer.joins(invoices: [:transactions])
+      .where("transactions.result = ?", "success")
+      .select("customers.*, count(transactions.id) as sales")
+      .group(:id)
+      .order("sales desc")
+      .limit(1)
+
+      cust.to_a.shift
+  end
+
+
 end

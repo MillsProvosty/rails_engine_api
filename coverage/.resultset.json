@@ -185,8 +185,8 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/customers.rb": [
         1,
         1,
-        14,
-        14,
+        17,
+        17,
         null,
         null
       ],
@@ -196,7 +196,7 @@
         1,
         1,
         1,
-        13,
+        18,
         null,
         null
       ],
@@ -205,15 +205,15 @@
         1,
         1,
         1,
-        17,
+        22,
         null,
         null
       ],
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/items.rb": [
         1,
         1,
-        16,
-        16,
+        21,
+        21,
         4,
         1,
         null,
@@ -222,7 +222,7 @@
       "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/spec/factories/merchants.rb": [
         1,
         1,
-        32,
+        33,
         null,
         null
       ],
@@ -230,9 +230,9 @@
         1,
         1,
         1,
-        9,
-        9,
-        9,
+        14,
+        14,
+        14,
         null,
         null
       ],
@@ -240,6 +240,7 @@
         1,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -320,6 +321,30 @@
         null,
         null,
         1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
         null,
         null
       ],
@@ -466,21 +491,26 @@
         1,
         1,
         null,
+        null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/controllers/api/v1/merchants/favorite_customer_controller.rb": [
+        1,
+        1,
+        1,
         null,
+        null
+      ],
+      "/Users/millsprovosty/turing/all_mod_3/project/rails_engine_api/app/serializers/merchant_favorite_customer_serializer.rb": [
+        1,
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1561762728
+    "timestamp": 1561936398
   }
 }
